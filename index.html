@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Colors</title>
+</head>
+<body>
+    <h1>Favorite Colors</h1>
+    <button id="colorButton">Add Favorite Color</button>
+    <div id="result"></div>
+
+    <script>
+        let favoriteColors = ["blue", "green", "red"]; 
+
+        function colorPreference() {
+            for (let i = 0; i < 3; i++) {
+                let color = prompt("Enter your favorite color:");
+                if (color) {
+                    favoriteColors.push(color);
+                    document.getElementById("result").innerText = "Your favorite colors are: " + favoriteColors.join(", ");
+                } else {
+                    alert("No color entered. Please try again.");
+                    i--; // Decrement to repeat the iteration
+                }
+            }
+        }
+
+        document.getElementById("colorButton").addEventListener("click", colorPreference);
+    </script>
+</body>
+</html>
